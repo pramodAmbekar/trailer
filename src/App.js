@@ -1,22 +1,25 @@
 import React from 'react';
 import './App.css';
-// import PokemonList from './container/pokemonList'
-// import Pokemon from './container/pokemonData'
-import {Switch, Route, NavLink, Redirect } from "react-router-dom"
-import PopularMovies from './container/movies/popularMovies'
+import Login from './components/login/login'
+import {Navbar} from "react-bootstrap"
+import { Switch, Route, NavLink, Redirect } from "react-router-dom"
+
 
 
 function App() {
   return (
     <div className="App">
+
       <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-        <NavLink className="navbar-brand text-white" to="/">Home</NavLink>
+
+        {/* <NavLink className="navbar-brand text-white" to="/">Home</NavLink> */}
+        <Navbar.Brand className="text-white" href="#home">Tune</Navbar.Brand>
+
       </nav>
-      {/* <MyCarousel/> */}
       <Switch>
-      <Route path={"/"} exact component={PopularMovies}/>      
-        {/* <Route path={"/pokemon/:pokemon"}  component={Pokemon}/> */}
-        <Redirect to={"/"}/>
+        <Route path={"/"} exact component={Login} />
+        
+        <Redirect to={"/"} /> 
       </Switch>
     </div>
   );
